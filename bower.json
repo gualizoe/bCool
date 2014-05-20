@@ -1,0 +1,7 @@
+{
+"name": "bCool",
+"version": "0.1",
+"dependencies": {
+   "jquery-mobile-bower": "*"
+ }
+}
