@@ -4,36 +4,26 @@
   <meta charset="utf-8" />
   <meta name="format-detection" content="telephone=no" />
   <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+  <link rel="stylesheet" type="text/css" href="css/index.css" />
   <link rel="stylesheet" type="text/css" href="bower/jquery-mobile-bower/css/jquery.mobile-1.4.2.css" />
   <!-- Nuestro CSS lo cargamos el último para que sobreescriba lo que teníamos -->
-  <link rel="stylesheet" type="text/css" href="css/index.css" />
-  <title>Hello! bCool!!!</title>
+  <link rel="stylesheet" type="text/css" href="css/custom.css" />
+  <title>bCool!</title>
 </head>
 <body>
-  <div class="ui-grid-a">
-    <div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:222px">Block A</div></div>
-    <div class="ui-block-b"><div class="ui-bar ui-bar-a" >
-      <div class="ui-grid-b">
-        <div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:60px">Block A</div></div>
-        <div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:60px">Block B</div></div>
-        <div class="ui-block-c"><div class="ui-bar ui-bar-a" style="height:60px">Block C</div></div>
-        <div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:60px">Block A</div></div>
-        <div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:60px">Block B</div></div>
-        <div class="ui-block-c"><div class="ui-bar ui-bar-a" style="height:60px">Block C</div></div>
-        <div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:60px">Block A</div></div>
-        <div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:60px">Block B</div></div>
-        <div class="ui-block-c"><div class="ui-bar ui-bar-a" style="height:60px">Block C</div></div>
-      </div><!-- /grid-c -->
-
-    </div></div>
-  </div><!-- /grid-a -->
-
+  <div id="home" data-role="page">
+    <div data-role="header" style="overflow:hidden;" data-position="fixed">
+    </div>
+  </div>
   <!-- LOS SCRIPTS SIEMPRE SE CARGAN AL FINAL! -->
-  <!-- Este phonegap.js es INTOCABLE! Porque es lo que se creará cuando portemos la app para Android/iOS, ahí está la diferencia, en el phonegap.js que se genera. -->
+  <!-- Este phonegap.js es INTOCABLE! Porque es lo que se creará cuando portemos la app para Android/iOS, ahí está la diferencia, en el phonegap.js que se genera. Este JavaScript proporciona la "abstraction layer" específica para cada plataforma móvil-->
   <script type="text/javascript" src="phonegap.js"></script>
-  <!-- Lo primero es cargar jquery! -->
+  <!-- Despues se carga jquery y jquerymobile -->
   <script type="text/javascript" src="bower/jquery/jquery.js"></script>
   <script type="text/javascript" src="bower/jquery-mobile-bower/js/jquery.mobile-1.4.2.js"></script>
+  <!-- Ahora cargamos la base de datos -->
+  <script type="text/javascript" src="js/database.js"></script>
+  <!-- Por ultimo cargamos nuestro archivo js -->
   <script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>
