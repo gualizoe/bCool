@@ -4,54 +4,59 @@
   <meta charset="utf-8" />
   <meta name="format-detection" content="telephone=no" />
   <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-  <link rel="stylesheet" type="text/css" href="css/index.css" />
   <link rel="stylesheet" type="text/css" href="bower/jquery-mobile-bower/css/jquery.mobile-1.4.2.css" />
   <!-- Nuestro CSS lo cargamos el último para que sobreescriba lo que teníamos -->
   <link rel="stylesheet" type="text/css" href="css/custom.css" />
   <title>bCool!</title>
 </head>
 <body>
-<!-- ESTO PARA QUÉ ES???
   <div id="home" data-role="page">
     <div data-role="header" style="overflow:hidden;" data-position="fixed">
+      <h1>bCool!</h1>
+      <!-- NUEVO
+      navegación y botones en el header http://demos.jquerymobile.com/1.4.2/navbar/#Navbarsinheaders -->
+      <a href="config.html" data-icon="gear" class="ui-btn-right">Opciones</a>
     </div>
+    <div data-role="content">
+      <!-- En la pantalla inicial, 3 opciones: editar prendas, editar reglas y combinar para ser cool! -->
+      <ul id="item" data-role="listview" data-filter="false" data-inset="true">
+        <li>
+          <a href="#">
+            <img src="http://transitionbuxton.co.uk/sites/default/files/all/JanetMiller/images/ClothesSwish%28web%29.jpg">
+            <h2>Editar prendas</h2>
+            <p>¿Te has comprado algo nuevo?</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="http://1.bp.blogspot.com/-rGu-rK81Uko/UP35ZU4qvdI/AAAAAAAAF-g/SpX9hWp02GY/s280/combinar+color+ropa+53.jpg">
+            <h2>Editar reglas de combinación</h2>
+            <p>¿Qué se lleva esta temporada?</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="http://chicastips.com/wp-content/uploads/2013/06/trucos-para-saber-combinar-la-ropa-150x150.jpg">
+            <h2>Combina, bCool!</h2>
+            <p>¿Qué nos ponemos hoy?</p>
+          </a>
+        </li>
+      </ul>
+    </ul>
   </div>
--->
-  <!-- ******************************************************************************
-        INICIO PRUEBAS EVA 2014_05_24
-        ****************************************************************************** -->
-        <!-- Barra de título/opciones -->
-        <a href="../config.html" data-ajax="false" class="ui-btn ui-shadow ui-corner-all ui-icon-gear ui-btn-icon-left">Opciones</a>
-        <!-- En la pantalla inicial, 3 opciones: editar prendas, editar reglas y combinar para ser cool! -->
-        <ul data-role="listview" data-inset="true">
-              <li><a href="#">
-                    <img src="http://transitionbuxton.co.uk/sites/default/files/all/JanetMiller/images/ClothesSwish%28web%29.jpg">
-                <h2>Editar prendas</h2>
-                <p>¿Te has comprado algo nuevo?</p></a>
-              </li>
-              <li><a href="#">
-                    <img src="http://1.bp.blogspot.com/-rGu-rK81Uko/UP35ZU4qvdI/AAAAAAAAF-g/SpX9hWp02GY/s280/combinar+color+ropa+53.jpg">
-                <h2>Editar reglas de combinación</h2>
-                <p>¿Qué se lleva esta temporada?</p></a>
-              </li>
-              <li><a href="#">
-                    <img src="http://chicastips.com/wp-content/uploads/2013/06/trucos-para-saber-combinar-la-ropa-150x150.jpg">
-                <h2>Combina, bCool!</h2>
-                <p>¿Qué nos ponemos hoy?</p></a>
-              </li>
-        </ul>
-  <!-- ******************************************************************************
-        FIN PRUEBAS EVA 2014_05_24
-        ****************************************************************************** -->
-        <!-- LOS SCRIPTS SIEMPRE SE CARGAN AL FINAL! -->
-        <!-- Este phonegap.js es INTOCABLE! Porque es lo que se creará cuando portemos la app para Android/iOS, ahí está la diferencia, en el phonegap.js que se genera. Este JavaScript proporciona la "abstraction layer" específica para cada plataforma móvil-->
-        <script type="text/javascript" src="phonegap.js"></script>
-        <!-- Despues se carga jquery y jquerymobile -->
-        <script type="text/javascript" src="bower/jquery/jquery.js"></script>
-        <script type="text/javascript" src="bower/jquery-mobile-bower/js/jquery.mobile-1.4.2.js"></script>
-        <!-- Ahora cargamos la base de datos -->
-        <script type="text/javascript" src="js/database.js"></script>
-        <!-- Por ultimo cargamos nuestro archivo js -->
-        <script type="text/javascript" src="js/index.js"></script>
-      </body>
-      </html>
+  <div data-role="footer" style="overflow:hidden;" data-position="fixed">
+    <h1>@gualizoe @fergardi &copy; 2014</h1>
+  </div>
+</div>
+<!-- LOS SCRIPTS SIEMPRE SE CARGAN AL FINAL! -->
+<!-- Este phonegap.js es INTOCABLE! Porque es lo que se creará cuando portemos la app para Android/iOS, ahí está la diferencia, en el phonegap.js que se genera. Este JavaScript proporciona la "abstraction layer" específica para cada plataforma móvil-->
+<script type="text/javascript" src="phonegap.js"></script>
+<!-- Despues se carga jquery y jquerymobile -->
+<script type="text/javascript" src="bower/jquery/jquery.js"></script>
+<script type="text/javascript" src="bower/jquery-mobile-bower/js/jquery.mobile-1.4.2.js"></script>
+<!-- Ahora cargamos la base de datos -->
+<script type="text/javascript" src="js/database.js"></script>
+<!-- Por ultimo cargamos nuestro archivo js -->
+<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

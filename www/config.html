@@ -1,33 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8" />
-  <meta name="format-detection" content="telephone=no" />
-  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-  <link rel="stylesheet" type="text/css" href="css/index.css" />
-  <link rel="stylesheet" type="text/css" href="bower/jquery-mobile-bower/css/jquery.mobile-1.4.2.css" />
-  <!-- Nuestro CSS lo cargamos el último para que sobreescriba lo que teníamos -->
-  <link rel="stylesheet" type="text/css" href="css/custom.css" />
-  <title>bCool config</title>
 </head>
 <body>
-  <!-- Barra de título/atrás -->
-  <a href="../index.html" data-ajax="false" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-left">Atrás</a>
-  <!-- En un futuro aquí habrá opciones que configurar, como notificaciones de que hoy no te has cambiado de ropa, el típico acerca-de, etc. -->
-  <div class="ui-corner-all">
-    <div class="ui-body ui-body-a">
-      <p>Configuración</p>
+  <div id="details" data-role="page">
+    <div data-role="header" style="overflow:hidden;" data-add-back-btn="true" data-back-btn-text="Volver" data-position="fixed">
+      <h1><b>Configuración</b></h1>
+      <a href="#" data-icon="info" class="ui-btn-right">Arcerca de</a>
+      <!-- NUEVO
+      listado de iconos y su posicionamiento http://demos.jquerymobile.com/1.4.2/icons/ -->
+    </div>
+    <div data-role="content">
+    <p>Contenido</p>
     </div>
   </div>
-  <!-- LOS SCRIPTS SIEMPRE SE CARGAN AL FINAL! -->
-  <!-- Este phonegap.js es INTOCABLE! Porque es lo que se creará cuando portemos la app para Android/iOS, ahí está la diferencia, en el phonegap.js que se genera. Este JavaScript proporciona la "abstraction layer" específica para cada plataforma móvil-->
-  <script type="text/javascript" src="phonegap.js"></script>
-  <!-- Despues se carga jquery y jquerymobile -->
-  <script type="text/javascript" src="bower/jquery/jquery.js"></script>
-  <script type="text/javascript" src="bower/jquery-mobile-bower/js/jquery.mobile-1.4.2.js"></script>
-  <!-- Ahora cargamos la base de datos -->
-  <script type="text/javascript" src="js/database.js"></script>
-  <!-- Por ultimo cargamos nuestro archivo js -->
-  <script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>
