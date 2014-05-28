@@ -20,14 +20,15 @@ function createTable(tx) {
   console.log('Dropping Table...');
   tx.executeSql('DROP TABLE IF EXISTS clothes');
   console.log('Creating Table...');
-  tx.executeSql('CREATE TABLE IF NOT EXISTS clothes (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, style TEXT NOT NULL, color TEXT NOT NULL, weather TEXT NOT NULL)');
+  tx.executeSql('CREATE TABLE IF NOT EXISTS clothes (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, style TEXT NOT NULL, color TEXT NOT NULL, weather TEXT NOT NULL, photo TEXT NOT NULL)');
   //inserts
   console.log('Inserting data...');
-  tx.executeSql('INSERT INTO clothes(name, style, color, weather) VALUES ("sweter", "completo", "rojo", "frio")');
-  tx.executeSql('INSERT INTO clothes(name, style, color, weather) VALUES ("jersey normal", "cuadros", "verde", "templado")');
-  tx.executeSql('INSERT INTO clothes(name, style, color, weather) VALUES ("camisa de manga larga", "rayas", "azul", "frio")');
-  tx.executeSql('INSERT INTO clothes(name, style, color, weather) VALUES ("jersey de cuello alto", "completo", "azul", "frio")');
-  tx.executeSql('INSERT INTO clothes(name, style, color, weather) VALUES ("camisa de manga corta", "completo", "blanco", "calor")');
+  tx.executeSql('INSERT INTO clothes(name, style, color, weather, photo) VALUES ("Sweater", "completo", "rojo", "frio", "img/photo/sweater.png")');
+  tx.executeSql('INSERT INTO clothes(name, style, color, weather, photo) VALUES ("Jersey", "cuadros", "verde", "templado", "img/photo/jersey.png")');
+  tx.executeSql('INSERT INTO clothes(name, style, color, weather, photo) VALUES ("Camisa de manga larga", "rayas", "azul", "frio", "img/photo/camisamangalarga.png")');
+  tx.executeSql('INSERT INTO clothes(name, style, color, weather, photo) VALUES ("Jersey de cuello alto", "completo", "azul", "frio", "img/photo/jerseycuelloalto.png")');
+  tx.executeSql('INSERT INTO clothes(name, style, color, weather, photo) VALUES ("Camisa de manga corta", "completo", "blanco", "calor", "img/photo/camisamangacorta.png")');
+  tx.executeSql('INSERT INTO clothes(name, style, color, weather, photo) VALUES ("Pantalones vaqueros", "completo", "azul marino", "templado", "img/photo/pantalonesvaqueros.png")');
 }
 
 //function will be called when an error occurred
@@ -54,9 +55,10 @@ function queryDataBase(tx){
 //populate listview
 function render(tx,result){
   console.log('Populating list...');
-  $('#clothesList').empty();
+  //$('#clothesList').empty();
   for (var i=0; i < result.rows.length; i++) {
-    $('#clothesList').append('<li><a href="#"><h2>Ropa</h2><p>Esto es una prueba de ropa</p></a></li>');
+    var row=result.rows.item(i);
+    $('#clothesList').append('<li><a href="#"><img src="'+row["photo"]+'"><h2>'+row['name']+'</h2><p>Esto es una prueba de ropa</p></a></li>');
   }
-  $('#clothesList').listview();
+  $('#clothesList').listview("refresh");
 }
