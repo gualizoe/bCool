@@ -30,15 +30,21 @@ var app = {
   },
 
   takePicture: function() {
-    navigator.camera.getPicture( function( imageURI ) {
-      alert( imageURI );
-    },
-    function( message ) {
-      alert( message );
-    },
-    {
+    navigator.camera.getPicture(onSuccess, onFail, {
       quality: 50,
-      destinationType: Camera.DestinationType.FILE_URI
+      destinationType: Camera.DestinationType.DATA_URL,
+      allowEdit: true
     });
+
+    //success
+    function onSuccess(imageData) {
+      var image = document.getElementById('picture');
+      image.src = "data:image/jpeg;base64," + imageData;
+    }
+
+    //fail
+    function onFail(message) {
+      alert('Failed because: ' + message);
+    }
   }
 };
