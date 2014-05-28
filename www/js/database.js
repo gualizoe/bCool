@@ -8,7 +8,6 @@ $(document).on('pageinit', '#home', function(event) {
 
 //function will be called when device ready
 function createDataBase(){
-  console.log("Creating openDatabase...");
   //will create database or open it if doesnt exists
   DataBase = window.openDatabase("bcool", "1.0", "My database", 3072 * 1024); //3MB
   DataBase.transaction(createTable, errorCallBack, successCallBack);
@@ -17,12 +16,9 @@ function createDataBase(){
 //create table and insert some record
 function createTable(tx) {
   //create table
-  console.log('Dropping Table...');
   tx.executeSql('DROP TABLE IF EXISTS clothes');
-  console.log('Creating Table...');
   tx.executeSql('CREATE TABLE IF NOT EXISTS clothes (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, style TEXT NOT NULL, color TEXT NOT NULL, weather TEXT NOT NULL, photo TEXT NOT NULL)');
   //inserts
-  console.log('Inserting data...');
   tx.executeSql('INSERT INTO clothes(name, style, color, weather, photo) VALUES ("Sweater", "completo", "rojo", "frio", "img/photo/sweater.png")');
   tx.executeSql('INSERT INTO clothes(name, style, color, weather, photo) VALUES ("Jersey", "cuadros", "verde", "templado", "img/photo/jersey.png")');
   tx.executeSql('INSERT INTO clothes(name, style, color, weather, photo) VALUES ("Camisa de manga larga", "rayas", "azul", "frio", "img/photo/camisamangalarga.png")');
@@ -33,12 +29,12 @@ function createTable(tx) {
 
 //function will be called when an error occurred
 function errorCallBack(err) {
-  console.log("Oh noes! There haz bin a datamabase error! OMAIGAD!1!! (err number: "+err.code+")");
+  console.log("Error: "+err.code);
 }
 
 //function will be called when process succeed
 function successCallBack() {
-  console.log("Success! Ewrizing rulezz!");
+  console.log("Success");
 }
 
 //listener pageinit clothes
@@ -48,17 +44,15 @@ $(document).on('pageinit', '#clothes', function(event) {
 
 //select all from table
 function queryDataBase(tx){
-  console.log('Querying data...');
   tx.executeSql('SELECT * FROM clothes',[],render,errorCallBack);
 }
 
 //populate listview
 function render(tx,result){
-  console.log('Populating list...');
   //$('#clothesList').empty();
   for (var i=0; i < result.rows.length; i++) {
     var row=result.rows.item(i);
-    $('#clothesList').append('<li><a href="#"><img src="'+row["photo"]+'"><h2>'+row['name']+'</h2><p>Esto es una prueba de ropa</p></a></li>');
+    $('#clothesList').append('<li><a href="details.html"><img src="'+row["photo"]+'"><h2>'+row['name']+'</h2><p>Esto es una prueba de ropa</p></a></li>');
   }
   $('#clothesList').listview("refresh");
 }

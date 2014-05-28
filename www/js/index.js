@@ -1,3 +1,3 @@
-// Cambiar animaciones por defecto a FLIP
-$.mobile.defaultPageTransition = 'flip'; // pages / popup transition
-$.mobile.defaultDialogTransition = 'flip'; // dialogs
+// Cambiar animaciones por defecto http://www.w3schools.com/jquerymobile/jquerymobile_transitions.asp
+$.mobile.defaultPageTransition = 'flow'; // pages / popup transition
+$.mobile.defaultDialogTransition = 'flow'; // dialogs
