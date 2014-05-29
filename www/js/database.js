@@ -49,7 +49,7 @@ function queryDataBase(tx){
 
 //populate listview
 function render(tx,result){
-  //$('#clothesList').empty();
+  $('#clothesList').empty();
   for (var i=0; i < result.rows.length; i++) {
     var row=result.rows.item(i);
     $('#clothesList').append('<li><a href="details.html"><img src="'+row["photo"]+'"><h2>'+row['name']+'</h2><p>Esto es una prueba de ropa</p></a></li>');

@@ -10,12 +10,46 @@
     <div data-role="content">
       <div class="ui-corner-all">
         <div class="ui-bar ui-bar-a">
-          <div id="custom-border-radius">
-            <a href="#" data-icon="camera" class="ui-btn ui-shadow ui-corner-all ui-icon-camera ui-btn-icon-notext" data-iconpos="center">Sacar foto</a>
-          </div>
+          <a href="#" data-icon="camera" class="ui-btn ui-shadow ui-corner-all ui-icon-camera ui-btn-icon-top">Sacar foto</a>
         </div>
         <div class="ui-body ui-body-a">
-          <p>Content</p>
+          <form>
+            <input type="text" name="name" id="name" placeholder="Nombre de la prenda..." value="" data-clear-btn="true" data-mini="false">
+            <input type="range" name="color" id="color" value="50" min="0" max="100" data-mini="false" >
+            <fieldset class="gender" data-role="controlgroup" data-type="horizontal" data-mini="false">
+              <label for="genderMale" class="male">
+                <input type="radio" name="gender" id="genderMale" value="Male">
+              </label>
+              <label for="genderFemale" class="female">
+                <input type="radio" name="gender" id="genderFemale" value="Female">
+              </label>
+            </fieldset>
+            <fieldset class="weather" data-role="controlgroup" data-type="horizontal" data-mini="false">
+              <label for="weatherCold" class="cold">
+                <input type="radio" name="weather" id="weatherCold" value="Cold">
+              </label>
+              <label for="weatherSunny" class="sunny">
+                <input type="radio" name="weather" id="weatherSunny" value="Sunny">
+              </label>
+              <label for="weatherHot" class="hot">
+                <input type="radio" name="weather" id="weatherHot" value="Hot">
+              </label>
+            </fieldset>
+            <fieldset class="style" data-role="controlgroup" data-type="horizontal" data-mini="false">
+              <label for="styleDotted" class="dotted">
+                <input type="radio" name="style" id="styleDotted" value="Dotted">
+              </label>
+              <label for="stylePlain" class="plain">
+                <input type="radio" name="style" id="stylePlain" value="Plain">
+              </label>
+              <label for="styleLines" class="lines">
+                <input type="radio" name="style" id="styleLines" value="Lines">
+              </label>
+              <label for="styleStamp" class="stamp">
+                <input type="radio" name="style" id="styleStamp" value="Stamp">
+              </label>
+            </fieldset>
+          </form>
         </div>
       </div>
     </div>
