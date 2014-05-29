@@ -35,8 +35,8 @@ var app = {
       destinationType: Camera.DestinationType.DATA_URL,
       allowEdit: true,
       encodingType: Camera.EncodingType.PNG,
-      targetWidth: 200,
-      targetHeight: 200,
+      targetWidth: 240,
+      targetHeight: 240,
       saveToPhotoAlbum: false
     });
 
