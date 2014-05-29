@@ -33,7 +33,11 @@ var app = {
     navigator.camera.getPicture(onSuccess, onFail, {
       quality: 50,
       destinationType: Camera.DestinationType.DATA_URL,
-      allowEdit: true
+      allowEdit: true,
+      encodingType: Camera.EncodingType.PNG,
+      targetWidth: 200,
+      targetHeight: 200,
+      saveToPhotoAlbum: false
     });
 
     //success
