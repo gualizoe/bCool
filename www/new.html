@@ -8,7 +8,7 @@
       <h1>Nueva prenda</h1>
     </div>
     <div data-role="content">
-      <form>
+      <form id="formNew" method="get" data-ajax="false">
         <div class="ui-corner-all">
           <div class="ui-bar ui-bar-a centered">
             <img id="picture" class="picture" src="" onclick="app.takePicture();" />
@@ -51,7 +51,7 @@
             </div>
           </div>
           <div class="ui-bar ui-bar-a">
-            <input type="submit" value="Guardar" data-icon="checl" data-mini="false">
+            <input type="submit" value="Guardar" data-icon="check" data-mini="false">
           </div>
         </div>
       </form>

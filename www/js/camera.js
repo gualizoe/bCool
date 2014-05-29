@@ -29,21 +29,22 @@ var app = {
     console.log('Received Event: ' + id);
   },
 
+  //solo necesitamos que la imagen sea cuadrada, luego los thumbnails del listview lo reducen a 80x80
   takePicture: function() {
     navigator.camera.getPicture(onSuccess, onFail, {
-      quality: 50,
+      quality: 80,
       destinationType: Camera.DestinationType.DATA_URL,
       allowEdit: true,
       encodingType: Camera.EncodingType.PNG,
-      targetWidth: 240,
-      targetHeight: 240,
+      targetWidth: 200,
+      targetHeight: 200,
       saveToPhotoAlbum: false
     });
 
     //success
     function onSuccess(imageData) {
       var image = document.getElementById('picture');
-      image.src = "data:image/jpeg;base64," + imageData;
+      image.src = "data:image/png;base64," + imageData;
     }
 
     //fail

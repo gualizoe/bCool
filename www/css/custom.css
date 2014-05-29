@@ -1,10 +1,26 @@
 /* general */
-html,body {
+html {
   background-color:#FFFFFF !important;
   width:100%;
   height:100%;
   text-transform: none;
 }
+/* general background */
+body {
+  background: url('../img/generalbackground.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+/* individual background
+*[data-role="page"] {
+  background: url('../img/individualbackground.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}*/
 /* listview thumbnails */
 .thumbnail {
   float: left;
@@ -19,9 +35,9 @@ html,body {
 }
 /* picture */
 .picture {
-  height: 240px;
-  width: 240px;
-  background-color: white;
+  height: 200px;
+  width: 200px;
+  background-color: black;
 }
 /* controlgroups */
 .ui-controlgroup-controls {
