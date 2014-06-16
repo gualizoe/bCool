@@ -6,13 +6,14 @@ html {
   text-transform: none;
 }
 /* general background */
-body {
+/*body {
   background: url('../img/generalbackground.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
+*/
 /* individual background
 *[data-role="page"] {
   background: url('../img/individualbackground.jpg') no-repeat center center fixed;
@@ -43,9 +44,8 @@ body {
 .ui-controlgroup-controls {
   width: 100%;
 }
-/* button sizes in new.html */
-.rest .ui-btn {
-
+.ui-radio label {
+  font-size: 10px;
 }
 /* radio labels with background images */
 .ui-controlgroup-controls label {
@@ -57,23 +57,26 @@ body {
 .weather .ui-radio {
   width: 33.333333333333333333333%;
 }
-/* radio weather background images*/
+/* radio weather background images
 .cold {background-image: url('../img/cold.png');}
 .sunny {background-image: url('../img/sunny.png');}
 .hot {background-image: url('../img/hot.png');}
+*/
 /* radio styles sizes */
 .style .ui-radio {
   width: 25%;
 }
-/* radio styles background images*/
+/* radio styles background images
 .dotted {background-image: url('../img/dotted.png');}
 .plain {background-image: url('../img/plain.png');}
 .stamp {background-image: url('../img/stamp.png');}
 .lines {background-image: url('../img/lines.png');}
-/* radio gender sizes */
-.gender .ui-radio {
-  width: 50%;
+*/
+.grayscaled {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: gray; /* IE 6-9 */
 }
-/* radio gender background images */
-.male {background-image: url('../img/male.png');}
-.female {background-image: url('../img/female.png');}

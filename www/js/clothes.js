@@ -2,7 +2,8 @@
 var DataBase;
 
 //listener pageinit home
-$(document).on('pageinit', '#home', function(event) {
+$(document).on('pageinit', '#clothes', function(event) {
+  console.log('Page loaded successfully!');
   createDataBase();
 });
 
@@ -29,12 +30,12 @@ function createTable(tx) {
 
 //function will be called when an error occurred
 function errorCallBack(err) {
-  console.log("Error: "+err.code);
+  console.log("DB Error: "+err.code);
 }
 
 //function will be called when process succeed
 function successCallBack() {
-  console.log("Success");
+  console.log("DataBase generated and poblated successfully!");
 }
 
 //listener pageinit clothes

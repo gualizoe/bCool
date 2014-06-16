@@ -8,46 +8,40 @@
       <h1>Nueva prenda</h1>
     </div>
     <div data-role="content">
-      <form id="formNew" method="get" data-ajax="false">
+      <form id="formNew" method="get" data-ajax="false" onSubmit="savePhoto();">
         <div class="ui-corner-all">
           <div class="ui-bar ui-bar-a centered">
-            <img id="picture" class="picture" src="" onclick="app.takePicture();" />
+            <img id="picture" class="picture" src="" onclick="capturePhoto();" />
           </div>
           <div class="ui-body ui-body-a">
             <input type="text" name="name" id="name" placeholder="Nombre de la prenda..." value="" data-clear-btn="true" data-mini="false">
-            <input type="range" name="color" id="color" value="50" min="0" max="100" data-mini="false" >
-            <div class="gender" data-role="controlgroup" data-type="horizontal" data-mini="false">
-              <label for="genderMale" class="male">
-                <input type="radio" name="gender" id="genderMale" value="Male">
-              </label>
-              <label for="genderFemale" class="female">
-                <input type="radio" name="gender" id="genderFemale" value="Female">
-              </label>
+            <div id="colorPicker">
+              <input type="range" name="color" id="color" value="0" min="0" max="0" data-mini="false" >
             </div>
-            <div class="weather" data-role="controlgroup" data-type="horizontal" data-mini="false">
-              <label for="weatherCold" class="cold">
+            <div id="weather" class="weather" data-role="controlgroup" data-type="horizontal" data-mini="false">
+              <label for="weatherCold" class="cold">Invierno
+              </label>
                 <input type="radio" name="weather" id="weatherCold" value="Cold">
+              <label for="weatherSunny" class="sunny">Entretiempo
               </label>
-              <label for="weatherSunny" class="sunny">
                 <input type="radio" name="weather" id="weatherSunny" value="Sunny">
+              <label for="weatherHot" class="hot">Verano
               </label>
-              <label for="weatherHot" class="hot">
                 <input type="radio" name="weather" id="weatherHot" value="Hot">
-              </label>
             </div>
             <div class="style" data-role="controlgroup" data-type="horizontal" data-mini="false">
-              <label for="styleDotted" class="dotted">
+              <label for="styleDotted" class="dotted">Lunares
+              </label>
                 <input type="radio" name="style" id="styleDotted" value="Dotted">
+              <label for="stylePlain" class="plain">Liso
               </label>
-              <label for="stylePlain" class="plain">
                 <input type="radio" name="style" id="stylePlain" value="Plain">
+              <label for="styleLines" class="lines">Rayas
               </label>
-              <label for="styleLines" class="lines">
                 <input type="radio" name="style" id="styleLines" value="Lines">
+              <label for="styleStamp" class="stamp">Estampado
               </label>
-              <label for="styleStamp" class="stamp">
                 <input type="radio" name="style" id="styleStamp" value="Stamp">
-              </label>
             </div>
           </div>
           <div class="ui-bar ui-bar-a">
